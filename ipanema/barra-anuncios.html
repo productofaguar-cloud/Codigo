@@ -1,0 +1,29 @@
+<!--
+  BARRA DE ANUNCIOS DESLIZANTE
+  Dónde va: Configuración → Códigos externos → campo de código para el <body>
+  (no en el <head>). Si preferís algo más simple, Ipanema trae su propia
+  barra de anuncios en Diseño → Personalizar: ahí pegás solo los textos.
+  Los estilos están en ipanema/css-personalizado.css (sección 2).
+  El texto se repite dos veces a propósito: así el deslizamiento no corta.
+-->
+<div class="bj-barra" role="region" aria-label="Anuncios">
+  <div class="bj-barra__pista">
+    <span>🚚 Envíos a todo el país</span>
+    <span>💳 Transferencia, depósito y tarjetas</span>
+    <span>📦 Compra mínima: $XXX.XXX</span>
+    <span>👖 Venta exclusiva por mayor</span>
+    <span aria-hidden="true">🚚 Envíos a todo el país</span>
+    <span aria-hidden="true">💳 Transferencia, depósito y tarjetas</span>
+    <span aria-hidden="true">📦 Compra mínima: $XXX.XXX</span>
+    <span aria-hidden="true">👖 Venta exclusiva por mayor</span>
+  </div>
+</div>
+<script>
+  // Mueve la barra al principio de la página (arriba del encabezado)
+  (function () {
+    var barra = document.querySelector('.bj-barra');
+    if (barra && document.body.firstChild !== barra) {
+      document.body.insertBefore(barra, document.body.firstChild);
+    }
+  })();
+</script>
