@@ -3,8 +3,14 @@
   Dónde va: en el módulo de la página de inicio de Ipanema que acepta HTML
   (Diseño → Personalizar → Página de inicio → sección de texto/HTML), con el botón "<>".
   El botón lleva a la categoría ANTICIPO de la tienda mayorista.
+
+  Fuente: Montserrat (la misma que usa el tema Ipanema). Se carga con el
+  @import de abajo porque este bloque suele renderizarse en un iframe
+  aparte, que no ve la fuente que ya carga el resto del tema.
 -->
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
 .bravo-video-inicio {
   position: relative;
   width: 100vw !important;
@@ -46,7 +52,7 @@
 .bravo-video-contenido h2 {
   margin: 0 0 14px;
   color: #fff;
-  font-family: inherit;
+  font-family: 'Montserrat', sans-serif;
   font-size: 34px;
   line-height: 1.1;
   font-weight: 700;
@@ -55,7 +61,7 @@
 .bravo-video-contenido p {
   margin: 0 0 20px;
   color: #fff;
-  font-family: inherit;
+  font-family: 'Montserrat', sans-serif;
   font-size: 19px;
   line-height: 1.3;
   font-weight: 400;
@@ -73,7 +79,7 @@
   border-radius: 999px;
   background: #000;
   color: #fff !important;
-  font-family: inherit;
+  font-family: 'Montserrat', sans-serif;
   font-size: 17px;
   line-height: 1;
   font-weight: 400;
