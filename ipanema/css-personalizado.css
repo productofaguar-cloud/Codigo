@@ -1,0 +1,92 @@
+/* =========================================================
+   BRAVO JEANS MAYORISTA — CSS personalizado para tema Ipanema
+   Dónde va: Mi Tienda → Diseño → Personalizar → Editar CSS avanzado
+   ========================================================= */
+
+/* ---------- 1. Colores de marca (cambiá solo estos valores) ---------- */
+:root {
+  --bj-primario: #1f3a5f;      /* azul denim */
+  --bj-primario-hover: #16294a;
+  --bj-acento: #c8102e;        /* rojo para ofertas */
+  --bj-texto: #1a1a1a;
+  --bj-fondo-suave: #f4f6f9;
+  --bj-borde: #dde2ea;
+  --bj-radio: 6px;
+}
+
+/* ---------- 2. Barra de anuncios (ver ipanema/barra-anuncios.html) ---------- */
+.bj-barra {
+  background: var(--bj-primario);
+  color: #fff;
+  font-size: 13px;
+  letter-spacing: .03em;
+  text-align: center;
+  padding: 8px 16px;
+  overflow: hidden;
+}
+.bj-barra__pista {
+  display: inline-flex;
+  gap: 48px;
+  white-space: nowrap;
+  animation: bj-desliza 25s linear infinite;
+}
+.bj-barra:hover .bj-barra__pista { animation-play-state: paused; }
+@keyframes bj-desliza {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bj-barra__pista { animation: none; }
+}
+
+/* ---------- 3. Botón flotante de WhatsApp (ver ipanema/whatsapp-flotante.html) ---------- */
+.bj-wsp {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 9999;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25d366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(0,0,0,.25);
+  transition: transform .2s ease;
+}
+.bj-wsp:hover { transform: scale(1.08); }
+.bj-wsp svg { width: 30px; height: 30px; fill: #fff; }
+@media (max-width: 767px) {
+  .bj-wsp { right: 12px; bottom: 80px; } /* sube para no tapar "Agregar al carrito" en celular */
+}
+
+/* ---------- 4. Ajustes sobre el tema ----------
+   Tiendanube usa estas clases en todos sus temas, pero si alguna
+   no cambia nada en Ipanema, clic derecho → "Inspeccionar" sobre el
+   elemento para ver su clase real y reemplazarla acá. */
+
+/* Botón principal (Comprar / Agregar al carrito) */
+.btn-primary,
+.js-addtocart {
+  background-color: var(--bj-primario) !important;
+  border-color: var(--bj-primario) !important;
+  border-radius: var(--bj-radio) !important;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  font-weight: 600;
+}
+.btn-primary:hover,
+.js-addtocart:hover {
+  background-color: var(--bj-primario-hover) !important;
+  border-color: var(--bj-primario-hover) !important;
+}
+
+/* Etiquetas de descuento / oferta */
+.label-accent,
+.js-offer-label {
+  background-color: var(--bj-acento) !important;
+  color: #fff !important;
+  border-radius: var(--bj-radio);
+  font-weight: 700;
+}
